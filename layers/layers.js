@@ -1,5 +1,5 @@
 ol.proj.proj4.register(proj4);
-//ol.proj.get("EPSG:3857").setExtent([-39941.009791, 7052300.684674, 11771.821578, 7103754.520226]);
+//ol.proj.get("EPSG:27700").setExtent([536997.982886, 172155.584701, 548906.575733, 179620.076977]);
 var wms_layers = [];
 
 
@@ -14,73 +14,71 @@ var wms_layers = [];
                 url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
             })
         });
-var format_Walkingcatchment_1 = new ol.format.GeoJSON();
-var features_Walkingcatchment_1 = format_Walkingcatchment_1.readFeatures(json_Walkingcatchment_1, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_Walkingcatchment_1 = new ol.source.Vector({
+var format_800mbuffer_1 = new ol.format.GeoJSON();
+var features_800mbuffer_1 = format_800mbuffer_1.readFeatures(json_800mbuffer_1, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:27700'});
+var jsonSource_800mbuffer_1 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_Walkingcatchment_1.addFeatures(features_Walkingcatchment_1);
-var lyr_Walkingcatchment_1 = new ol.layer.Vector({
+jsonSource_800mbuffer_1.addFeatures(features_800mbuffer_1);
+var lyr_800mbuffer_1 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_Walkingcatchment_1, 
-                style: style_Walkingcatchment_1,
-                popuplayertitle: 'Walking catchment',
+                source:jsonSource_800mbuffer_1, 
+                style: style_800mbuffer_1,
+                popuplayertitle: '800m buffer',
                 interactive: false,
-    title: 'Walking catchment<br />\
-    <img src="styles/legend/Walkingcatchment_1_0.png" /> 10 min<br />\
-    <img src="styles/legend/Walkingcatchment_1_1.png" /> 15 min<br />\
-    <img src="styles/legend/Walkingcatchment_1_2.png" /> 20 min<br />' });
-var format_NELCactors_2 = new ol.format.GeoJSON();
-var features_NELCactors_2 = format_NELCactors_2.readFeatures(json_NELCactors_2, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_NELCactors_2 = new ol.source.Vector({
-    attributions: ' ',
-});
-jsonSource_NELCactors_2.addFeatures(features_NELCactors_2);
-var lyr_NELCactors_2 = new ol.layer.Vector({
-                declutter: false,
-                source:jsonSource_NELCactors_2, 
-                style: style_NELCactors_2,
-                popuplayertitle: 'NELC actors',
-                interactive: true,
-    title: 'NELC actors<br />\
-    <img src="styles/legend/NELCactors_2_0.png" /> Community space<br />\
-    <img src="styles/legend/NELCactors_2_1.png" /> Faith/Cultural institution<br />\
-    <img src="styles/legend/NELCactors_2_2.png" /> Health/Social care<br />\
-    <img src="styles/legend/NELCactors_2_3.png" /> Local business<br />\
-    <img src="styles/legend/NELCactors_2_4.png" /> Local government office<br />' });
-var format_Selectedneighbourhood_3 = new ol.format.GeoJSON();
-var features_Selectedneighbourhood_3 = format_Selectedneighbourhood_3.readFeatures(json_Selectedneighbourhood_3, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_Selectedneighbourhood_3 = new ol.source.Vector({
-    attributions: ' ',
-});
-jsonSource_Selectedneighbourhood_3.addFeatures(features_Selectedneighbourhood_3);
-var lyr_Selectedneighbourhood_3 = new ol.layer.Vector({
-                declutter: false,
-                source:jsonSource_Selectedneighbourhood_3, 
-                style: style_Selectedneighbourhood_3,
-                popuplayertitle: 'Selected neighbourhood',
-                interactive: false,
-                title: '<img src="styles/legend/Selectedneighbourhood_3.png" /> Selected neighbourhood'
+                title: '<img src="styles/legend/800mbuffer_1.png" /> 800m buffer'
             });
-var group_NELC = new ol.layer.Group({
-                                layers: [lyr_Walkingcatchment_1,lyr_NELCactors_2,lyr_Selectedneighbourhood_3,],
+var format_HornPark_2 = new ol.format.GeoJSON();
+var features_HornPark_2 = format_HornPark_2.readFeatures(json_HornPark_2, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:27700'});
+var jsonSource_HornPark_2 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_HornPark_2.addFeatures(features_HornPark_2);
+var lyr_HornPark_2 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_HornPark_2, 
+                style: style_HornPark_2,
+                popuplayertitle: 'Horn Park',
+                interactive: true,
+                title: '<img src="styles/legend/HornPark_2.png" /> Horn Park'
+            });
+var format_Greenwichactors_3 = new ol.format.GeoJSON();
+var features_Greenwichactors_3 = format_Greenwichactors_3.readFeatures(json_Greenwichactors_3, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:27700'});
+var jsonSource_Greenwichactors_3 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Greenwichactors_3.addFeatures(features_Greenwichactors_3);
+var lyr_Greenwichactors_3 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Greenwichactors_3, 
+                style: style_Greenwichactors_3,
+                popuplayertitle: 'Greenwich-actors',
+                interactive: true,
+    title: 'Greenwich-actors<br />\
+    <img src="styles/legend/Greenwichactors_3_0.png" /> Community space<br />\
+    <img src="styles/legend/Greenwichactors_3_1.png" /> Faith/Cultural institution<br />\
+    <img src="styles/legend/Greenwichactors_3_2.png" /> Health/Social care<br />\
+    <img src="styles/legend/Greenwichactors_3_3.png" /> Local business<br />\
+    <img src="styles/legend/Greenwichactors_3_4.png" /> Local government office<br />' });
+var group_Greenwich = new ol.layer.Group({
+                                layers: [lyr_800mbuffer_1,lyr_HornPark_2,lyr_Greenwichactors_3,],
                                 fold: 'open',
-                                title: 'NELC'});
+                                title: 'Greenwich'});
 
-lyr_OpenStreetMap_0.setVisible(true);lyr_Walkingcatchment_1.setVisible(true);lyr_NELCactors_2.setVisible(true);lyr_Selectedneighbourhood_3.setVisible(true);
-var layersList = [lyr_OpenStreetMap_0,group_NELC];
-lyr_Walkingcatchment_1.set('fieldAliases', {'ID': 'ID', 'CENTER_LON': 'CENTER_LON', 'CENTER_LAT': 'CENTER_LAT', 'AA_MINS': 'AA_MINS', 'AA_MODE': 'AA_MODE', 'TOTAL_POP': 'TOTAL_POP', });
-lyr_NELCactors_2.set('fieldAliases', {'id': 'id', 'Actor_name': 'Actor_name', 'Category': 'Category', 'Parking': 'Parking', 'Accessible': 'Accessible', 'Update_web': 'Update_web', 'E-booking': 'E-booking', 'Open_hours': 'Open_hours', 'Free_cours': 'Free_cours', 'Support': 'Support', 'Social_act': 'Social_act', 'Device_loa': 'Device_loa', 'WiFi': 'WiFi', 'Device_use': 'Device_use', 'Other': 'Other', });
-lyr_Selectedneighbourhood_3.set('fieldAliases', {'fid': 'fid', 'LSOA21CD': 'LSOA21CD', 'LSOA21NM': 'LSOA21NM', 'LSOA21NMW': 'LSOA21NMW', 'BNG_E': 'BNG_E', 'BNG_N': 'BNG_N', 'LAT': 'LAT', 'LONG': 'LONG', 'GlobalID': 'GlobalID', });
-lyr_Walkingcatchment_1.set('fieldImages', {'ID': '', 'CENTER_LON': '', 'CENTER_LAT': '', 'AA_MINS': '', 'AA_MODE': '', 'TOTAL_POP': '', });
-lyr_NELCactors_2.set('fieldImages', {'id': 'TextEdit', 'Actor_name': 'TextEdit', 'Category': 'TextEdit', 'Parking': 'TextEdit', 'Accessible': 'TextEdit', 'Update_web': 'TextEdit', 'E-booking': 'TextEdit', 'Open_hours': 'TextEdit', 'Free_cours': 'TextEdit', 'Support': 'TextEdit', 'Social_act': 'TextEdit', 'Device_loa': 'TextEdit', 'WiFi': 'TextEdit', 'Device_use': 'TextEdit', 'Other': 'TextEdit', });
-lyr_Selectedneighbourhood_3.set('fieldImages', {'fid': '', 'LSOA21CD': '', 'LSOA21NM': '', 'LSOA21NMW': '', 'BNG_E': '', 'BNG_N': '', 'LAT': '', 'LONG': '', 'GlobalID': '', });
-lyr_Walkingcatchment_1.set('fieldLabels', {'ID': 'no label', 'CENTER_LON': 'no label', 'CENTER_LAT': 'no label', 'AA_MINS': 'no label', 'AA_MODE': 'no label', 'TOTAL_POP': 'no label', });
-lyr_NELCactors_2.set('fieldLabels', {'id': 'hidden field', 'Actor_name': 'no label', 'Category': 'no label', 'Parking': 'inline label - visible with data', 'Accessible': 'inline label - visible with data', 'Update_web': 'inline label - visible with data', 'E-booking': 'inline label - visible with data', 'Open_hours': 'inline label - visible with data', 'Free_cours': 'inline label - visible with data', 'Support': 'inline label - visible with data', 'Social_act': 'inline label - visible with data', 'Device_loa': 'inline label - visible with data', 'WiFi': 'inline label - visible with data', 'Device_use': 'inline label - visible with data', 'Other': 'inline label - visible with data', });
-lyr_Selectedneighbourhood_3.set('fieldLabels', {'fid': 'no label', 'LSOA21CD': 'no label', 'LSOA21NM': 'no label', 'LSOA21NMW': 'no label', 'BNG_E': 'no label', 'BNG_N': 'no label', 'LAT': 'no label', 'LONG': 'no label', 'GlobalID': 'no label', });
-lyr_Selectedneighbourhood_3.on('precompose', function(evt) {
+lyr_OpenStreetMap_0.setVisible(true);lyr_800mbuffer_1.setVisible(true);lyr_HornPark_2.setVisible(true);lyr_Greenwichactors_3.setVisible(true);
+var layersList = [lyr_OpenStreetMap_0,group_Greenwich];
+lyr_800mbuffer_1.set('fieldAliases', {'qc_id': 'qc_id', 'fid': 'fid', 'actor_name': 'actor_name', 'category': 'category', 'Parking': 'Parking', 'Accessibility_ramp': 'Accessibility_ramp', 'an_updated_website': 'an_updated_website', 'opening_hours': 'opening_hours', });
+lyr_HornPark_2.set('fieldAliases', {'fid': 'fid', 'lsoa21cd': 'lsoa21cd', 'lsoa21nm': '<b>Horn Park</b><br>', 'msoa21cd': 'msoa21cd', 'msoa21nm': 'msoa21nm', 'lad22cd': 'lad22cd', 'lad22nm': 'lad22nm', 'Population': 'Population', 'Age': 'Age', 'Deprivation': 'Deprivation', });
+lyr_Greenwichactors_3.set('fieldAliases', {'fid': 'fid', 'actor_name': 'actor_name', 'Category': 'Category', 'Parking': 'Parking', 'Accessible': 'Accessible', 'Update webpage': 'Update webpage', 'Open hours': 'Open hours', 'Other': 'Other', 'Social activities': 'Social activities', 'Training or course': 'Training or course', });
+lyr_800mbuffer_1.set('fieldImages', {'qc_id': 'Range', 'fid': 'Range', 'actor_name': 'TextEdit', 'category': 'TextEdit', 'Parking': 'TextEdit', 'Accessibility_ramp': 'TextEdit', 'an_updated_website': 'TextEdit', 'opening_hours': 'TextEdit', });
+lyr_HornPark_2.set('fieldImages', {'fid': 'TextEdit', 'lsoa21cd': 'TextEdit', 'lsoa21nm': 'TextEdit', 'msoa21cd': 'TextEdit', 'msoa21nm': 'TextEdit', 'lad22cd': 'TextEdit', 'lad22nm': 'TextEdit', 'Population': 'TextEdit', 'Age': 'TextEdit', 'Deprivation': 'TextEdit', });
+lyr_Greenwichactors_3.set('fieldImages', {'fid': 'TextEdit', 'actor_name': 'TextEdit', 'Category': 'TextEdit', 'Parking': 'TextEdit', 'Accessible': 'TextEdit', 'Update webpage': 'TextEdit', 'Open hours': 'TextEdit', 'Other': 'TextEdit', 'Social activities': 'TextEdit', 'Training or course': 'TextEdit', });
+lyr_800mbuffer_1.set('fieldLabels', {'qc_id': 'no label', 'fid': 'no label', 'actor_name': 'no label', 'category': 'no label', 'Parking': 'no label', 'Accessibility_ramp': 'no label', 'an_updated_website': 'no label', 'opening_hours': 'no label', });
+lyr_HornPark_2.set('fieldLabels', {'fid': 'hidden field', 'lsoa21cd': 'hidden field', 'lsoa21nm': 'hidden field', 'msoa21cd': 'hidden field', 'msoa21nm': 'hidden field', 'lad22cd': 'hidden field', 'lad22nm': 'hidden field', 'Population': 'inline label - visible with data', 'Age': 'inline label - visible with data', 'Deprivation': 'inline label - visible with data', });
+lyr_Greenwichactors_3.set('fieldLabels', {'fid': 'hidden field', 'actor_name': 'no label', 'Category': 'no label', 'Parking': 'inline label - visible with data', 'Accessible': 'inline label - visible with data', 'Update webpage': 'inline label - visible with data', 'Open hours': 'inline label - visible with data', 'Other': 'inline label - visible with data', 'Social activities': 'inline label - visible with data', 'Training or course': 'inline label - visible with data', });
+lyr_Greenwichactors_3.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });

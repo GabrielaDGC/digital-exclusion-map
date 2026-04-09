@@ -4,15 +4,15 @@ var map = new ol.Map({
     renderer: 'canvas',
     layers: layersList,
     view: new ol.View({
-        extent: [-39941.009791, 7052300.684674, 11771.821578, 7103754.520226], maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
-            code: 'EPSG:3857',
-            //extent: [-14153.605337, 7076527.782649, -3137.762487, 7087479.659614],
+        extent: [536997.982886, 172155.584701, 548906.575733, 179620.076977], maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
+            code: 'EPSG:27700',
+            //extent: [539053.511399, 172846.343151, 542600.432711, 174787.164204],
             units: 'm'})
     })
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([-39941.009791, 7052300.684674, 11771.821578, 7103754.520226], map.getSize());
+map.getView().fit([536997.982886, 172155.584701, 548906.575733, 179620.076977], map.getSize());
 
 //full zooms only
 map.getView().setProperties({constrainResolution: true});
@@ -151,7 +151,7 @@ var featureOverlay = new ol.layer.Vector({
 });
 
 var doHighlight = true;
-var doHover = true;
+var doHover = false;
 
 function createPopupField(currentFeature, currentFeatureKeys, layer) {
     var popupText = '';
@@ -501,7 +501,7 @@ var Title = new ol.control.Control({
     element: (() => {
         var titleElement = document.createElement('div');
         titleElement.className = 'top-left-title ol-control';
-        titleElement.innerHTML = '<h2 class="project-title">Digital Exclusion</h2>';
+        titleElement.innerHTML = '<h2 class="project-title">Digital Exclusion of Older People at the Neighbourhood Level</h2>';
         return titleElement;
     })(),
     target: 'top-left-container'
@@ -509,6 +509,44 @@ var Title = new ol.control.Control({
 map.addControl(Title)
     
 //abstract
+
+var Abstract = new ol.control.Control({
+    element: (() => {
+        var titleElement = document.createElement('div');
+        titleElement.className = 'top-left-abstract ol-control';
+        titleElement.id = 'abstract';
+
+        var linkElement = document.createElement('a');
+
+        if (723 > 240) {
+            linkElement.setAttribute("onmouseenter", "showAbstract()");
+            linkElement.setAttribute("onmouseleave", "hideAbstract()");
+            linkElement.innerHTML = 'i';
+
+            window.hideAbstract = function() {
+                linkElement.classList.add("project-abstract");
+                linkElement.classList.remove("project-abstract-uncollapsed");
+                linkElement.innerHTML = 'i';
+            }
+
+            window.showAbstract = function() {
+                linkElement.classList.remove("project-abstract");
+                linkElement.classList.add("project-abstract-uncollapsed");
+                linkElement.innerHTML = 'Geospatial mapping revealed:<br /><br />&bull; Poor accessibility to essential services and local assets, <br />&bull; High prevalence of significant health conditions or disability among residents, and<br />&bull; Connectivity and infrastructure - weaker broadband.<br /><br />These barriers manifested through Behavioural Systems Mapping as two overarching, behavioural outcomes: reliance on others or disengagement from digital service, which highlight: <br><br />&bull; Lack of physical spaces and limited engagement pathways suppress digital participation. <br />&bull; Lack of dedicated community spaces, relying instead on information hubs e.g. a like the primary school. Key community assets, such as St Mildred\'s Church are located outside of the estate.';
+            }
+
+            hideAbstract();
+        } else {
+            linkElement.classList.add("project-abstract-uncollapsed");
+            linkElement.innerHTML = 'Geospatial mapping revealed:<br /><br />&bull; Poor accessibility to essential services and local assets, <br />&bull; High prevalence of significant health conditions or disability among residents, and<br />&bull; Connectivity and infrastructure - weaker broadband.<br /><br />These barriers manifested through Behavioural Systems Mapping as two overarching, behavioural outcomes: reliance on others or disengagement from digital service, which highlight: <br><br />&bull; Lack of physical spaces and limited engagement pathways suppress digital participation. <br />&bull; Lack of dedicated community spaces, relying instead on information hubs e.g. a like the primary school. Key community assets, such as St Mildred\'s Church are located outside of the estate.';
+        }
+
+        titleElement.appendChild(linkElement);
+        return titleElement;
+    })(),
+    target: 'top-left-container'
+});
+map.addControl(Abstract);
 
 
 //geolocate
