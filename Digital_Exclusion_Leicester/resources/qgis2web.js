@@ -4,15 +4,15 @@ var map = new ol.Map({
     renderer: 'canvas',
     layers: layersList,
     view: new ol.View({
-        extent: [452296.058607, 295726.134582, 464925.570460, 303642.510168], maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
+        extent: [452963.160202, 296333.139347, 465076.988577, 303022.200441], maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
             code: 'EPSG:27700',
-            //extent: [455462.551965, 298016.212251, 459901.771298, 301799.011454],
+            //extent: [455462.551965, 298016.212251, 530881.233533, 408976.373348],
             units: 'm'})
     })
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([452296.058607, 295726.134582, 464925.570460, 303642.510168], map.getSize());
+map.getView().fit([452963.160202, 296333.139347, 465076.988577, 303022.200441], map.getSize());
 
 //full zooms only
 map.getView().setProperties({constrainResolution: true});
@@ -518,7 +518,7 @@ var Abstract = new ol.control.Control({
 
         var linkElement = document.createElement('a');
 
-        if (771 > 240) {
+        if (764 > 240) {
             linkElement.setAttribute("onmouseenter", "showAbstract()");
             linkElement.setAttribute("onmouseleave", "hideAbstract()");
             linkElement.innerHTML = 'i';
@@ -532,13 +532,13 @@ var Abstract = new ol.control.Control({
             window.showAbstract = function() {
                 linkElement.classList.remove("project-abstract");
                 linkElement.classList.add("project-abstract-uncollapsed");
-                linkElement.innerHTML = 'Geospatial mapping revealed:<br /><br />&bull; Limited digital skills and confidence of older people.<br />&bull; Connectivity and infrastructure - weaker broadband.<br />&bull; Affordability barriers - devices and broadband speed may be limited.<br />&bull; For some - distance to key assets.<br /><br />Digital exclusion is driven by a combination of psychological barriers surrounding confidence, anxiety and identity, as well as capability and skills gaps. This together with lack of adequate broadband speeds and fragmented support offer can have significant impact on residents’ digital inclusion levels. Physical distance to assets is of significant presence in parts of the estates. This could link to exclusion from day-to-day tasks and connection opportunities and ultimately digital exclusion.<br /><br />';
+                linkElement.innerHTML = 'Geospatial mapping revealed:<br /><br />&bull; Limited digital skills and confidence of older people.<br />&bull; Connectivity and infrastructure - weaker broadband.<br />&bull; Affordability barriers - devices and broadband speed may be limited.<br />For some - distance to key assets.<br /><br />Digital exclusion is driven by a combination of psychological barriers surrounding confidence, anxiety and identity, as well as capability and skills gaps. This together with lack of adequate broadband speeds and fragmented support offer can have significant impact on residents’ digital inclusion levels. Physical distance to assets is of significant presence in parts of the estates. This could link to exclusion from day-to-day tasks and connection opportunities and ultimately digital exclusion.<br /><br />';
             }
 
             hideAbstract();
         } else {
             linkElement.classList.add("project-abstract-uncollapsed");
-            linkElement.innerHTML = 'Geospatial mapping revealed:<br /><br />&bull; Limited digital skills and confidence of older people.<br />&bull; Connectivity and infrastructure - weaker broadband.<br />&bull; Affordability barriers - devices and broadband speed may be limited.<br />&bull; For some - distance to key assets.<br /><br />Digital exclusion is driven by a combination of psychological barriers surrounding confidence, anxiety and identity, as well as capability and skills gaps. This together with lack of adequate broadband speeds and fragmented support offer can have significant impact on residents’ digital inclusion levels. Physical distance to assets is of significant presence in parts of the estates. This could link to exclusion from day-to-day tasks and connection opportunities and ultimately digital exclusion.<br /><br />';
+            linkElement.innerHTML = 'Geospatial mapping revealed:<br /><br />&bull; Limited digital skills and confidence of older people.<br />&bull; Connectivity and infrastructure - weaker broadband.<br />&bull; Affordability barriers - devices and broadband speed may be limited.<br />For some - distance to key assets.<br /><br />Digital exclusion is driven by a combination of psychological barriers surrounding confidence, anxiety and identity, as well as capability and skills gaps. This together with lack of adequate broadband speeds and fragmented support offer can have significant impact on residents’ digital inclusion levels. Physical distance to assets is of significant presence in parts of the estates. This could link to exclusion from day-to-day tasks and connection opportunities and ultimately digital exclusion.<br /><br />';
         }
 
         titleElement.appendChild(linkElement);

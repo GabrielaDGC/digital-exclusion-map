@@ -4,7 +4,7 @@ var map = new ol.Map({
     renderer: 'canvas',
     layers: layersList,
     view: new ol.View({
-        extent: [528840.868615, 187467.904662, 536202.246267, 192082.131324], maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
+        extent: [529282.674018, 188085.618281, 538307.168300, 193068.798802], maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
             code: 'EPSG:27700',
             //extent: [530170.814334, 188338.731554, 534805.183953, 191708.688323],
             units: 'm'})
@@ -12,7 +12,7 @@ var map = new ol.Map({
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([528840.868615, 187467.904662, 536202.246267, 192082.131324], map.getSize());
+map.getView().fit([529282.674018, 188085.618281, 538307.168300, 193068.798802], map.getSize());
 
 //full zooms only
 map.getView().setProperties({constrainResolution: true});
@@ -518,7 +518,7 @@ var Abstract = new ol.control.Control({
 
         var linkElement = document.createElement('a');
 
-        if (815 > 240) {
+        if (997 > 240) {
             linkElement.setAttribute("onmouseenter", "showAbstract()");
             linkElement.setAttribute("onmouseleave", "hideAbstract()");
             linkElement.innerHTML = 'i';
@@ -532,13 +532,13 @@ var Abstract = new ol.control.Control({
             window.showAbstract = function() {
                 linkElement.classList.remove("project-abstract");
                 linkElement.classList.add("project-abstract-uncollapsed");
-                linkElement.innerHTML = 'Geospatial mapping revealed:<br />&bull; Affordability barriers - devices and broadband speed may be limited,<br />&bull; Limited digital skills and confidence of older people & limited resources and visibility of digital inclusion teams who may be able to offer digital support and skill development<br />&bull; Connectivity and infrastructure - weaker broadband.<br /><br />Lower English language proficiency across parts of the estates could indicate difficulties in seeking and providing digital support. For these neighbourhoods, social connection did not emerge as a primary driver of digital exclusion but was partly present at the edge of the estates. The key assets on this map do not sit within the boundary but are accessible by public transport and are already playing an important role in connecting older people to residents. ';
+                linkElement.innerHTML = 'Geospatial mapping explored digital exclusion through national and local datasets, to support the behavioural systems mapping approach. Several key challenges contributing to exclusion were found, primarily: <br />&bull; Affordability barriers - devices and broadband speed may be limited,<br />&bull; Limited digital skills and confidence of older people & limited resources and visibility of digital inclusion teams who may be able to offer digital support and skill development<br />&bull; Connectivity and infrastructure - weaker broadband.<br /><br />Lower English language proficiency across parts of the estates could indicate difficulties in seeking and providing digital support. For these neighbourhoods, social connection did not emerge as a primary driver of digital exclusion but was partly present at the edge of the estates. The key assets on this map do not sit within the boundary but are accessible by public transport and are already playing an important role in connecting older people to residents. <br /><br />';
             }
 
             hideAbstract();
         } else {
             linkElement.classList.add("project-abstract-uncollapsed");
-            linkElement.innerHTML = 'Geospatial mapping revealed:<br />&bull; Affordability barriers - devices and broadband speed may be limited,<br />&bull; Limited digital skills and confidence of older people & limited resources and visibility of digital inclusion teams who may be able to offer digital support and skill development<br />&bull; Connectivity and infrastructure - weaker broadband.<br /><br />Lower English language proficiency across parts of the estates could indicate difficulties in seeking and providing digital support. For these neighbourhoods, social connection did not emerge as a primary driver of digital exclusion but was partly present at the edge of the estates. The key assets on this map do not sit within the boundary but are accessible by public transport and are already playing an important role in connecting older people to residents. ';
+            linkElement.innerHTML = 'Geospatial mapping explored digital exclusion through national and local datasets, to support the behavioural systems mapping approach. Several key challenges contributing to exclusion were found, primarily: <br />&bull; Affordability barriers - devices and broadband speed may be limited,<br />&bull; Limited digital skills and confidence of older people & limited resources and visibility of digital inclusion teams who may be able to offer digital support and skill development<br />&bull; Connectivity and infrastructure - weaker broadband.<br /><br />Lower English language proficiency across parts of the estates could indicate difficulties in seeking and providing digital support. For these neighbourhoods, social connection did not emerge as a primary driver of digital exclusion but was partly present at the edge of the estates. The key assets on this map do not sit within the boundary but are accessible by public transport and are already playing an important role in connecting older people to residents. <br /><br />';
         }
 
         titleElement.appendChild(linkElement);

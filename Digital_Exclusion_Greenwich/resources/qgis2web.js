@@ -4,7 +4,7 @@ var map = new ol.Map({
     renderer: 'canvas',
     layers: layersList,
     view: new ol.View({
-        extent: [536997.982886, 172155.584701, 548906.575733, 179620.076977], maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
+        extent: [536684.086580, 170744.475192, 546290.208066, 176048.820895], maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
             code: 'EPSG:27700',
             //extent: [539053.511399, 172846.343151, 542600.432711, 174787.164204],
             units: 'm'})
@@ -12,7 +12,7 @@ var map = new ol.Map({
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([536997.982886, 172155.584701, 548906.575733, 179620.076977], map.getSize());
+map.getView().fit([536684.086580, 170744.475192, 546290.208066, 176048.820895], map.getSize());
 
 //full zooms only
 map.getView().setProperties({constrainResolution: true});
@@ -518,7 +518,7 @@ var Abstract = new ol.control.Control({
 
         var linkElement = document.createElement('a');
 
-        if (723 > 240) {
+        if (722 > 240) {
             linkElement.setAttribute("onmouseenter", "showAbstract()");
             linkElement.setAttribute("onmouseleave", "hideAbstract()");
             linkElement.innerHTML = 'i';
@@ -532,13 +532,13 @@ var Abstract = new ol.control.Control({
             window.showAbstract = function() {
                 linkElement.classList.remove("project-abstract");
                 linkElement.classList.add("project-abstract-uncollapsed");
-                linkElement.innerHTML = 'Geospatial mapping revealed:<br /><br />&bull; Poor accessibility to essential services and local assets, <br />&bull; High prevalence of significant health conditions or disability among residents, and<br />&bull; Connectivity and infrastructure - weaker broadband.<br /><br />These barriers manifested through Behavioural Systems Mapping as two overarching, behavioural outcomes: reliance on others or disengagement from digital service, which highlight: <br><br />&bull; Lack of physical spaces and limited engagement pathways suppress digital participation. <br />&bull; Lack of dedicated community spaces, relying instead on information hubs e.g. a like the primary school. Key community assets, such as St Mildred\'s Church are located outside of the estate.';
+                linkElement.innerHTML = 'Geospatial mapping revealed:<br /><br />&bull; Poor accessibility to essential services and local assets,<br />&bull; High prevalence of significant health conditions or disability among residents, and<br />&bull; Connectivity and infrastructure - weaker broadband.<br /><br />These barriers manifested through Behavioural Systems Mapping as two overarching, behavioural outcomes: reliance on others or disengagement from digital service, which highlight: <br><br />&bull; Lack of physical spaces and limited engagement pathways suppress digital participation.<br />&bull; Lack of dedicated community spaces, relying instead on information hubs e.g. a like the primary school. Key community assets, such as St Mildred\'s Church are located outside of the estate.<br />';
             }
 
             hideAbstract();
         } else {
             linkElement.classList.add("project-abstract-uncollapsed");
-            linkElement.innerHTML = 'Geospatial mapping revealed:<br /><br />&bull; Poor accessibility to essential services and local assets, <br />&bull; High prevalence of significant health conditions or disability among residents, and<br />&bull; Connectivity and infrastructure - weaker broadband.<br /><br />These barriers manifested through Behavioural Systems Mapping as two overarching, behavioural outcomes: reliance on others or disengagement from digital service, which highlight: <br><br />&bull; Lack of physical spaces and limited engagement pathways suppress digital participation. <br />&bull; Lack of dedicated community spaces, relying instead on information hubs e.g. a like the primary school. Key community assets, such as St Mildred\'s Church are located outside of the estate.';
+            linkElement.innerHTML = 'Geospatial mapping revealed:<br /><br />&bull; Poor accessibility to essential services and local assets,<br />&bull; High prevalence of significant health conditions or disability among residents, and<br />&bull; Connectivity and infrastructure - weaker broadband.<br /><br />These barriers manifested through Behavioural Systems Mapping as two overarching, behavioural outcomes: reliance on others or disengagement from digital service, which highlight: <br><br />&bull; Lack of physical spaces and limited engagement pathways suppress digital participation.<br />&bull; Lack of dedicated community spaces, relying instead on information hubs e.g. a like the primary school. Key community assets, such as St Mildred\'s Church are located outside of the estate.<br />';
         }
 
         titleElement.appendChild(linkElement);

@@ -1,7 +1,7 @@
 var size = 0;
 var placement = 'point';
 
-var style_800mbuffer_1 = function(feature, resolution){
+var style_Walkingcatchment_1 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -9,10 +9,10 @@ var style_800mbuffer_1 = function(feature, resolution){
     
     var labelText = ""; 
     var value = feature.get("");
-    var labelFont = "18.2px \'Calibri\', sans-serif";
-    var labelFill = "#323232";
-    var bufferColor = "#fafafa";
-    var bufferWidth = 1.5;
+    var labelFont = "10px, sans-serif";
+    var labelFill = "#000000";
+    var bufferColor = "";
+    var bufferWidth = 0;
     var textAlign = "left";
     var offsetX = 0;
     var offsetY = 0;
@@ -21,7 +21,7 @@ var style_800mbuffer_1 = function(feature, resolution){
         labelText = String("");
     }
     var style = [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(35,35,35,0.4)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.988}),fill: new ol.style.Fill({color: 'rgba(221,205,185,0.4)'}),
+        stroke: new ol.style.Stroke({color: 'rgba(35,35,35,0.319)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.988}),fill: new ol.style.Fill({color: 'rgba(221,205,185,0.319)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)

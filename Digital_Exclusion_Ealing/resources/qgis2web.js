@@ -4,7 +4,7 @@ var map = new ol.Map({
     renderer: 'canvas',
     layers: layersList,
     view: new ol.View({
-        extent: [509319.982015, 177902.383594, 522271.330485, 186020.491406], maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
+        extent: [508444.746803, 177902.383594, 523146.565697, 186020.491406], maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
             code: 'EPSG:27700',
             //extent: [511628.140750, 178559.691229, 518705.363073, 183893.132894],
             units: 'm'})
@@ -12,7 +12,7 @@ var map = new ol.Map({
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([509319.982015, 177902.383594, 522271.330485, 186020.491406], map.getSize());
+map.getView().fit([508444.746803, 177902.383594, 523146.565697, 186020.491406], map.getSize());
 
 //full zooms only
 map.getView().setProperties({constrainResolution: true});
@@ -518,7 +518,7 @@ var Abstract = new ol.control.Control({
 
         var linkElement = document.createElement('a');
 
-        if (750 > 240) {
+        if (1010 > 240) {
             linkElement.setAttribute("onmouseenter", "showAbstract()");
             linkElement.setAttribute("onmouseleave", "hideAbstract()");
             linkElement.innerHTML = 'i';
@@ -532,13 +532,13 @@ var Abstract = new ol.control.Control({
             window.showAbstract = function() {
                 linkElement.classList.remove("project-abstract");
                 linkElement.classList.add("project-abstract-uncollapsed");
-                linkElement.innerHTML = 'Geospatial mapping revealed:<br />&bull; Limited digital skills, confidence and trust among older people,<br />&bull; Affordability barriers - devices and broadband speed may be limited,<br />&bull; Lower English language proficiency - could indicate difficulties in seeking and providing digital support. <br /><br /><br />Behavioural Systems Mapping identifies disengagement not only as a result of low skills, but as a response to complex multi-step processes across services (e.g. logging in, verification, navigation), leading to abandonment. <br /><br /><br />Spatial analysis further added nuance: while several assets are within walking distance and others are well connected by bus, these may still be perceived as difficult to access, particularly for those with mobility constraints.<br />';
+                linkElement.innerHTML = 'Geospatial mapping of the Havelock Estate and wider borough used national and local datasets to explore the nature neighbourhood level digital exclusion. Analysis then looked to explore how this supported or challenged insights from the Behavioural Systems Mapping approach. This revealed:<br />&bull; Limited digital skills, confidence and trust among older people,<br />&bull; Affordability barriers - devices and broadband speed may be limited,<br />&bull; Lower English language proficiency - could indicate difficulties in seeking and providing digital support. <br /><br />Behavioural Systems Mapping identifies disengagement not only as a result of low skills, but as a response to complex multi-step processes across services (e.g. logging in, verification, navigation), leading to abandonment. <br /><br />Spatial analysis further added nuance: while several assets are within walking distance and others are well connected by bus, these may still be perceived as difficult to access, particularly for those with mobility constraints.<br /><br />';
             }
 
             hideAbstract();
         } else {
             linkElement.classList.add("project-abstract-uncollapsed");
-            linkElement.innerHTML = 'Geospatial mapping revealed:<br />&bull; Limited digital skills, confidence and trust among older people,<br />&bull; Affordability barriers - devices and broadband speed may be limited,<br />&bull; Lower English language proficiency - could indicate difficulties in seeking and providing digital support. <br /><br /><br />Behavioural Systems Mapping identifies disengagement not only as a result of low skills, but as a response to complex multi-step processes across services (e.g. logging in, verification, navigation), leading to abandonment. <br /><br /><br />Spatial analysis further added nuance: while several assets are within walking distance and others are well connected by bus, these may still be perceived as difficult to access, particularly for those with mobility constraints.<br />';
+            linkElement.innerHTML = 'Geospatial mapping of the Havelock Estate and wider borough used national and local datasets to explore the nature neighbourhood level digital exclusion. Analysis then looked to explore how this supported or challenged insights from the Behavioural Systems Mapping approach. This revealed:<br />&bull; Limited digital skills, confidence and trust among older people,<br />&bull; Affordability barriers - devices and broadband speed may be limited,<br />&bull; Lower English language proficiency - could indicate difficulties in seeking and providing digital support. <br /><br />Behavioural Systems Mapping identifies disengagement not only as a result of low skills, but as a response to complex multi-step processes across services (e.g. logging in, verification, navigation), leading to abandonment. <br /><br />Spatial analysis further added nuance: while several assets are within walking distance and others are well connected by bus, these may still be perceived as difficult to access, particularly for those with mobility constraints.<br /><br />';
         }
 
         titleElement.appendChild(linkElement);

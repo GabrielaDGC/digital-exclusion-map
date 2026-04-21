@@ -1,5 +1,5 @@
 ol.proj.proj4.register(proj4);
-//ol.proj.get("EPSG:27700").setExtent([501158.525114, 388471.874124, 549944.152294, 419051.468368]);
+//ol.proj.get("EPSG:27700").setExtent([519920.621022, 401788.304098, 533765.462296, 409433.202659]);
 var wms_layers = [];
 
 
@@ -75,7 +75,7 @@ var layersList = [lyr_OpenStreetMap_0,group_NELC];
 lyr_Walkingcatchment_1.set('fieldAliases', {'ID': 'ID', 'CENTER_LON': 'CENTER_LON', 'CENTER_LAT': 'CENTER_LAT', 'AA_MINS': 'AA_MINS', 'AA_MODE': 'AA_MODE', 'TOTAL_POP': 'TOTAL_POP', });
 lyr_Selectedneighbourhood_2.set('fieldAliases', {'fid': 'fid', 'LSOA21CD': 'LSOA21CD', 'LSOA21NM': 'LSOA21NM', 'LSOA21NMW': 'LSOA21NMW', 'BNG_E': 'BNG_E', 'BNG_N': 'BNG_N', 'LAT': 'LAT', 'LONG': 'LONG', 'GlobalID': 'GlobalID', 'Population': 'Population', 'Age': 'Age', 'Deprivation': 'Deprivation', });
 lyr_NELCactors_3.set('fieldAliases', {'id': 'id', 'Actor_name': 'Actor_name', 'Category': 'Category', 'Parking': 'Parking', 'Accessible': 'Accessible', 'Update_web': 'Update_web', 'E-booking': 'E-booking', 'Open_hours': 'Open_hours', 'Free_cours': 'Free_cours', 'Support': 'Support', 'Social_act': 'Social_act', 'Device_loa': 'Device_loa', 'WiFi': 'WiFi', 'Device_use': 'Device_use', 'Other': 'Other', });
-lyr_Walkingcatchment_1.set('fieldImages', {'ID': '', 'CENTER_LON': '', 'CENTER_LAT': '', 'AA_MINS': '', 'AA_MODE': '', 'TOTAL_POP': '', });
+lyr_Walkingcatchment_1.set('fieldImages', {'ID': 'TextEdit', 'CENTER_LON': 'TextEdit', 'CENTER_LAT': 'TextEdit', 'AA_MINS': 'Range', 'AA_MODE': 'TextEdit', 'TOTAL_POP': 'TextEdit', });
 lyr_Selectedneighbourhood_2.set('fieldImages', {'fid': '', 'LSOA21CD': '', 'LSOA21NM': '', 'LSOA21NMW': '', 'BNG_E': '', 'BNG_N': '', 'LAT': '', 'LONG': '', 'GlobalID': '', 'Population': '', 'Age': '', 'Deprivation': '', });
 lyr_NELCactors_3.set('fieldImages', {'id': 'TextEdit', 'Actor_name': 'TextEdit', 'Category': 'TextEdit', 'Parking': 'TextEdit', 'Accessible': 'TextEdit', 'Update_web': 'TextEdit', 'E-booking': 'TextEdit', 'Open_hours': 'TextEdit', 'Free_cours': 'TextEdit', 'Support': 'TextEdit', 'Social_act': 'TextEdit', 'Device_loa': 'TextEdit', 'WiFi': 'TextEdit', 'Device_use': 'TextEdit', 'Other': 'TextEdit', });
 lyr_Walkingcatchment_1.set('fieldLabels', {'ID': 'no label', 'CENTER_LON': 'no label', 'CENTER_LAT': 'no label', 'AA_MINS': 'no label', 'AA_MODE': 'no label', 'TOTAL_POP': 'no label', });
