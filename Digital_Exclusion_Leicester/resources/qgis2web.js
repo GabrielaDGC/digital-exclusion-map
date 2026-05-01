@@ -4,15 +4,15 @@ var map = new ol.Map({
     renderer: 'canvas',
     layers: layersList,
     view: new ol.View({
-        extent: [452963.160202, 296333.139347, 465076.988577, 303022.200441], maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
+        extent: [454505.816540, 296185.567265, 460536.507815, 302992.938477], maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
             code: 'EPSG:27700',
-            //extent: [455462.551965, 298016.212251, 530881.233533, 408976.373348],
+            //extent: [455462.551965, 298016.212251, 459901.771298, 301799.011454],
             units: 'm'})
     })
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([452963.160202, 296333.139347, 465076.988577, 303022.200441], map.getSize());
+map.getView().fit([454505.816540, 296185.567265, 460536.507815, 302992.938477], map.getSize());
 
 //full zooms only
 map.getView().setProperties({constrainResolution: true});
@@ -571,11 +571,22 @@ map.addControl(Abstract);
 //layerswitcher
 
 var layerSwitcher = new ol.control.LayerSwitcher({
-    tipLabel: "Layers",
-    target: 'top-right-container'
-});
+    activationMode: 'click',
+	startActive: true,
+	tipLabel: "Layers",
+    target: 'top-right-container',
+	collapseLabel: '»',
+	collapseTipLabel: 'Close'
+    });
 map.addControl(layerSwitcher);
-    
+if (hasTouchScreen || isSmallScreen) {
+	document.addEventListener('DOMContentLoaded', function() {
+		setTimeout(function() {
+			layerSwitcher.hidePanel();
+		}, 500);
+	});	
+}
+
 
 
 
